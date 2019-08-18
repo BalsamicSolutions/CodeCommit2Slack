@@ -1,0 +1,23 @@
+﻿Outline of instructions
+	Create slack channel
+		with logo?
+		save  url with tokens 
+	Create Lambda with wizard 
+				Set environment for SlackChannelUrl
+				Set enviornment for MaxChangesWarningThreshold
+
+	Modify Lambda role to allow Codecommit readaonly access
+	Setup triggers to lambda
+				one for new branch
+				one for branch delete
+				one for push
+	Setup notifications 
+				Update cloudwatch to send to Lambda instead of SNS topic, 
+				modify the value to send the Matched event instead of $.detail.notificationBody  (which is what SNS gets)
+	Modifying the code and publishing the project
+
+Futures
+	Text templates for notifications, with language configuration
+	Embelishing the log with data from the GIT repo checkin (not just notes but actual file diff's)
+	Better formatting of Slack message, specifically the Warning message should have a STOP sign on it
+	Integrate with CodeBuild to package actual project
