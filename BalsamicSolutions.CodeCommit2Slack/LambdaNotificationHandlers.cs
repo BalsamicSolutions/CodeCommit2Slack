@@ -229,8 +229,8 @@ namespace BalsamicSolutions.CodeCommit2Slack
         }
 
         /// <summary>
-        /// this is our callback for all of the AWS triggers and notifications. We dont
-        /// user the AWS LambdaSerializer because we are processing more than
+        /// this is our callback for all of the AWS triggers and notifications. We do not
+        /// use the AWS LambdaSerializer because we are processing more than
         /// one type of JSON data packages on the same endpoint.
         ///
         ///Use this name to register with Lambda
