@@ -1,16 +1,20 @@
 ﻿Outline of instructions
 	Create slack channel
+		enable webhooks and collect url with token to a channel
 		with logo?
 		save  url with tokens 
 	Create Lambda with wizard 
+	https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-notify-lambda.html
 				Set environment for SlackChannelUrl
-				Set enviornment for MaxChangesWarningThreshold
+				Set environment for MaxChangesWarningThreshold
 
 	Modify Lambda role to allow Codecommit readaonly access
 	Setup triggers to lambda
 				one for new branch
 				one for branch delete
 				one for push
+
+	dotnet lambda package --configuration "Lambda-Debug"
 	Setup notifications 
 				Update cloudwatch to send to Lambda instead of SNS topic, 
 				modify the value to send the Matched event instead of $.detail.notificationBody  (which is what SNS gets)
